@@ -1,21 +1,22 @@
-const prompt = require ("prompt-sync")({sigint: true})
-const operator = prompt('Enter operator: ');  
-  
-const number1 = parseFloat(prompt ('Enter the first number: '));  
-const number2 = parseFloat(prompt ('Enter the second number: '));  
-  
-let result;  
-  
-if (operator == '+') { 
-    result = number1 + number2;  
-}  
-else if (operator == '-') { 
-    result = number1 - number2;  
-}  
-else if (operator == '*') {   
-    result = number1 * number2;  
-}  
-else {  
-    result = number1 / number2;  
-}  
-console.log("The result is ", result)
+const argvs = process.argv
+const argv = argvs.slice(2)
+const operation = argv[0]
+const operator1 = parseInt(argv[1])
+const operator2 = parseInt(argv[2])
+ 
+if (operation === 'add') {
+    console.log(operation + ' is '
+        + (operator1 + operator2));
+}
+if (operation === 'subtract') {
+    console.log(operation + ' is '
+        + (operator1 - operator2));
+}
+if (operation === 'multiply') {
+    console.log(operation + ' is '
+        + (operator1 + operator2));
+}
+if (operation === 'divide') {
+    console.log(operation + ' is '
+        + (operator1 - operator2));
+}
